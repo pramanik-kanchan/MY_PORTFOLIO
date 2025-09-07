@@ -312,3 +312,36 @@ input:focus, textarea:focus {
 .btn.download { background: var(--accent); color: #fff; }
 .btn.download:hover { background: var(--primary); }
 .project-media img { width: 100%; height: 100%; object-fit: cover; }
+
+.hero-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-photo img {
+  width: 250px;   /* slightly bigger photo */
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #0f172a; /* very thin dark border */
+  position: relative;
+  z-index: 2;
+  background: #0f172a;
+}
+
+/* Glowing background circle */
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  width: 255px;   /* just a little bigger than image */
+  height: 255px;
+  border-radius: 50%;
+  background: #0f172a;
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.6),
+              0 0 40px rgba(0, 255, 200, 0.4),
+              0 0 60px rgba(0, 255, 200, 0.2);
+  z-index: 1;
+}
+
